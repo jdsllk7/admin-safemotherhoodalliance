@@ -10,6 +10,27 @@
         </a>
     </p>
 </footer>
+
+
+<div class="modal fade" id="modalDialogBox">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content bg-light">
+            <div class="modal-header border-bottom-0 centerElementsInDiv">
+                <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p class="text-center modal-body-p"></p>
+            </div>
+            <div class="modal-footer center border-top-0 centerElementsInDiv">
+                <button type="button" class="btn bg-gray hide" id="OkClose" style="width: 80px;">Okay</button>
+                <button type="button" class="btn btn-danger hide" id="confirmCancel" style="width: 80px;">Cancel</button>
+                <button type="button" class="btn btn-success hide" id="confirmOk" style="width: 80px;">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </div>
 <!-- ./wrapper -->
 
@@ -46,6 +67,9 @@
         });
     });
 </script>
+<script src="dist/js/dialogBox.js"></script>
+<script src="dist/js/ajaxCall.js"></script>
+<script src="dist/js/emailDelete.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,8 @@
 <!-- header -->
 <?php
 $title = "Admin - Home | Safe Motherhood Alliance";
-include 'includes/partials/header.inc.php';
+include_once 'includes/partials/header.inc.php';
+include_once 'includes/class-autoLoader.inc.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -15,7 +16,8 @@ include 'includes/partials/header.inc.php';
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active">Home</li>
+            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item active">Subscribed Emails</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -36,7 +38,7 @@ include 'includes/partials/header.inc.php';
             </div> -->
             <!-- /.card-header -->
             <div class="card-body">
-              <table id="example1" class="table table-bordered table-striped">
+              <table id="example1" class="table table-hover table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>No.</th>
@@ -47,25 +49,46 @@ include 'includes/partials/header.inc.php';
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="emailRow">
-                    <td>1.</td>
-                    <td>jdslk7@gmail.com</td>
-                    <td>Active</td>
-                    <td>20-01-2021</td>
-                    <td>
-                      <button type="button" class="btn btn-sm btn-danger emailDeleteBtn">Delete</button>
-                    </td>
-                  </tr>
+
+                  <?php
+                  $subscribedEmails = new SubscribedEmails\SubscribedEmails();
+                  $result = $subscribedEmails->getSubscribedEmails();
+                  $count = 0;
+                  if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                      //numbered display
+                      $count++;
+
+                      //display email status
+                      $status = "";
+                      if ($row["status"] == 1) {
+                        $status = '<span class="badge badge-success">Active</span>';
+                      }
+
+                      //format date
+                      $dateTime = new DateTime($row["emailSubscribeDate"]);
+                      $formattedDate = $dateTime->format('d-m-Y | h:m A');
+                      echo '
+                    <tr class="emailRow' . $row["emailSubscribeId"] . '">
+                      <td>' . $count . '.</td>
+                      <td>' . $row["email"] . '</td>
+                      <td>' . $status . '</td>
+                      <td>' . $formattedDate . '</td>
+                      <td>
+                        <form class="emailDeleteForm">
+                          <input type="hidden" name="emailId" value="' . $row["emailSubscribeId"] . '">
+                          <button type="submit" title="Delete Email" class="btn btn-sm btn-danger">Delete</button>
+                        </form>
+                      </td>
+                    </tr>
+                    ';
+                    }
+                  } else {
+                    echo '<p class="text-danger bold">No emails at the moment</p>';
+                  }
+                  ?>
+
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <th>No.</th>
-                    <th>Email Address</th>
-                    <th>Status</th>
-                    <th>Date Subscribed</th>
-                    <th>Action</th>
-                  </tr>
-                </tfoot>
               </table>
             </div>
             <!-- /.card-body -->
@@ -82,5 +105,5 @@ include 'includes/partials/header.inc.php';
 <!-- /.content-wrapper -->
 
 <?php
-include 'includes/partials/footer.inc.php';
+include_once 'includes/partials/footer.inc.php';
 ?>

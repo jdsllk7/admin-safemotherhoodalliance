@@ -1,3 +1,6 @@
+#my ignore
+*.vscode
+
 # System / Log files
 *.DS_Store
 *.log

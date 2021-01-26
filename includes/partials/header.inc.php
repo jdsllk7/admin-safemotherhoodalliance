@@ -2,15 +2,11 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-include 'includes/login-check.inc.php';
-include 'includes/class-autoLoader.inc.php';
+include_once 'includes/login-check.inc.php';
+include_once 'includes/class-autoLoader.inc.php';
 ?>
 
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
 <html lang="en">
 
 <head>
@@ -33,6 +29,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="dist/css/style1.css">
+    <link rel="stylesheet" href="dist/css/style2.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -58,7 +55,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <a href="index.php" class="brand-link text-center" style="background-color: #394046;">
-                <img src="dist/img/logo/pink-mom-baby-logo-with-large-label-right.png" alt="Logo" width="200" height="70" style="opacity: .9">
+                <img src="dist/img/logo/pink-mom-baby-logo-circle-white-background.png" alt="Logo" width="100" height="100" style="opacity: .8">
             </a>
 
             <div class="brand-link text-center">
@@ -80,9 +77,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="inbox.php" class="nav-link">
-                                        <i class="far fa-envelope nav-icon"></i>
-                                        <p>Inbox</p>
+                                    <a href="uploadBlog.php" class="nav-link">
+                                        <i class="fas fa-blog nav-icon"></i>
+                                        <p>Active Blogs</p>
                                     </a>
                                 </li>
                             </ul>

@@ -1,7 +1,7 @@
 <!-- header -->
 <?php
 $title = "Admin - Home | Safe Motherhood Alliance";
-include 'includes/partials/header.inc.php';
+include_once 'includes/partials/header.inc.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -32,7 +32,13 @@ include 'includes/partials/header.inc.php';
         <div class="col-lg-3 col-6">
           <div class="small-box bg-light">
             <div class="inner">
-              <h3>4</h3>
+              <h3>
+                <?php
+                $subscribedEmails = new SubscribedEmails\SubscribedEmails();
+                $result = $subscribedEmails->getSubscribedEmails();
+                echo $result->num_rows;
+                ?>
+              </h3>
               <p>Subscribed Emails</p>
             </div>
             <div class="icon">
@@ -49,12 +55,12 @@ include 'includes/partials/header.inc.php';
           <div class="small-box bg-light">
             <div class="inner">
               <h3>10</h3>
-              <p>Subscribed Emails</p>
+              <p>Active Blogs</p>
             </div>
             <div class="icon">
-              <i class="far fa-envelope"></i>
+              <i class="fas fa-blog"></i>
             </div>
-            <a href="inbox.php" class="small-box-footer">
+            <a href="uploadBlog.php" class="small-box-footer">
               Open <i class="fas fa-arrow-circle-right"></i>
             </a>
           </div>
@@ -69,5 +75,5 @@ include 'includes/partials/header.inc.php';
 <!-- /.content-wrapper -->
 
 <?php
-include 'includes/partials/footer.inc.php';
+include_once 'includes/partials/footer.inc.php';
 ?>

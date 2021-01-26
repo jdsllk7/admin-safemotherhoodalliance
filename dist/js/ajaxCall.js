@@ -1,11 +1,11 @@
 $(document).ready(function () {
-  window.ajaxCall = function ajaxCall(
-    type, //post or get
-    form, //form ID: $(this)
-    url, //URL to post form data to
-    redirectStatus, //should we redirect after success? true/false
-    redirectURL, //URL to redirect to if response = success
-    callbackFunction //pass call back function or NULL
+  window.ajaxCallForm = function ajaxCallForm(
+    type, // post/get [required]
+    form, //HTML form: $(this) [required]
+    url, //URL to post form data to [required]
+    redirectStatus, //should we redirect after success? true/false [required]
+    redirectURL, //URL to redirect to if response = success [default = empty string]
+    callbackFunction //function to call after success [default = null]
   ) {
     //house keeping
     let submitBtn = form.closest("form").find(":submit");
@@ -35,7 +35,7 @@ $(document).ready(function () {
             }, 2000);
           }
           if (callbackFunction) {
-            callbackFunction(response.status);
+            callbackFunction(form, response.message);
           }
         } else {
           feedbackMsg.removeClass("text-success");
@@ -53,5 +53,21 @@ $(document).ready(function () {
         submitBtn.html(submitBtnText);
       },
     });
-  }; // end ajaxCall()
+  }; // end ajaxCallForm()
 }); //end document.ready
+
+/* let myPromise = new Promise((resolve, reject) => {
+  //check if user is sure of action
+  if (true) {
+    resolve();
+  } else {
+    reject();
+  }
+});
+myPromise
+  .then(() => {
+    //if resolve
+  })
+  .catch(() => {
+    //if reject
+  }); */

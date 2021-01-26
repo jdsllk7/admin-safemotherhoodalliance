@@ -6,14 +6,13 @@ include_once 'class-autoLoader.inc.php';
 $response = array();
 
 //get form input
-$email = $_POST["email"];
-$password = $_POST["password"];
+$emailId = $_POST["emailId"];
 
 //get class object
-$adminLogin = new AdminLogin\AdminLogin();
+$subscribedEmails = new SubscribedEmails\SubscribedEmails();
 
 //save email
-$response = $adminLogin->isAdmin($email, $password);
+$response = $subscribedEmails->deleteEmail($emailId);
 
 //send back to jQuery
 echo json_encode($response);

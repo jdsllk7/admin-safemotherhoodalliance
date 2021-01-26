@@ -1,7 +1,7 @@
 <!-- header -->
 <?php
 $title = "Admin - Home | Safe Motherhood Alliance";
-include 'includes/partials/header.inc.php';
+include_once 'includes/partials/header.inc.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -15,7 +15,8 @@ include 'includes/partials/header.inc.php';
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item active">Home</li>
+          <li class="breadcrumb-item"><a href="index.php">Home</a></li>
+            <li class="breadcrumb-item active">Mail</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -30,7 +31,7 @@ include 'includes/partials/header.inc.php';
 
         <!-- small card -->
         <div class="col-lg-3 col-6">
-          Inbox
+          Blog
         </div>
 
       </div>
@@ -42,5 +43,5 @@ include 'includes/partials/header.inc.php';
 <!-- /.content-wrapper -->
 
 <?php
-include 'includes/partials/footer.inc.php';
+include_once 'includes/partials/footer.inc.php';
 ?>

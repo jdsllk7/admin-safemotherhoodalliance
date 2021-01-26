@@ -2,7 +2,7 @@
 if (!isset($_SESSION)) {
 	session_start();
 }
-include 'includes/class-autoLoader.inc.php';
+include_once 'includes/class-autoLoader.inc.php';
 if (isset($_SESSION["login"])) {
   header("Location: index.php");
 }

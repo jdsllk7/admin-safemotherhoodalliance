@@ -83,6 +83,10 @@
   font-size: x-large !important;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 .border-dark-1 {
   border: 1px solid #4d4d4d !important;
 }
@@ -161,4 +165,9 @@
 
 .text-gray-dark {
   color: #808080 !important;
+}
+
+.centerElementsInDiv {
+  text-align: center;
+  margin: 0 auto;
 }
