@@ -6,7 +6,7 @@
             document.write(new Date().getFullYear());
         </script> All rights reserved | Powered by
         <a href="https://joshuakosamu.netlify.app/" target="_blank">
-            <img src="https://jdslk.netlify.com/other/images/jdslk_logo.png" height="40px" width="40px" alt="joshuakosamu.netlify.app">
+            <img src="https://web-remote-resources.netlify.app/jdslk/jdslk_logo.png" height="40px" width="40px" alt="joshuakosamu.netlify.app">
         </a>
     </p>
 </footer>
@@ -67,6 +67,7 @@
         });
     });
 </script>
+<script src="dist/js/imagePreview.js"></script>
 <script src="dist/js/dialogBox.js"></script>
 <script src="dist/js/ajaxCall.js"></script>
 <script src="dist/js/emailDelete.js"></script>

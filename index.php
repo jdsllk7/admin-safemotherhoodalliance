@@ -60,7 +60,7 @@ include_once 'includes/partials/header.inc.php';
             <div class="icon">
               <i class="fas fa-blog"></i>
             </div>
-            <a href="uploadBlog.php" class="small-box-footer">
+            <a href="blogs.php" class="small-box-footer">
               Open <i class="fas fa-arrow-circle-right"></i>
             </a>
           </div>

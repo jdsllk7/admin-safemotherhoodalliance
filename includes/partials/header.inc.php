@@ -77,7 +77,7 @@ include_once 'includes/class-autoLoader.inc.php';
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="uploadBlog.php" class="nav-link">
+                                    <a href="blogs.php" class="nav-link">
                                         <i class="fas fa-blog nav-icon"></i>
                                         <p>Active Blogs</p>
                                     </a>
