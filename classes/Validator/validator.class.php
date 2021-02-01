@@ -2,7 +2,9 @@
 
 namespace Validator;
 
-class Validator
+use FileManager\FileManager;
+
+class Validator extends FileManager
 {
     //validate email
     public function validate_email($data, $required)

@@ -54,7 +54,13 @@ include_once 'includes/partials/header.inc.php';
         <div class="col-lg-3 col-6">
           <div class="small-box bg-light">
             <div class="inner">
-              <h3>10</h3>
+              <h3>
+                <?php
+                $blog = new Blog\Blog();
+                $result = $blog->getAllBlogs();
+                echo $result->num_rows;
+                ?>
+              </h3>
               <p>Active Blogs</p>
             </div>
             <div class="icon">

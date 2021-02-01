@@ -16,12 +16,13 @@ class AdminLogin extends Db
 
 	public function isAdmin($email, $password)
 	{
+		$conn = $this->connect();
 		session_start();
 		//clean up values
-		$this->email = $this->stripOff($this->connect(), $email);
-		$this->password = $this->stripOff($this->connect(), $password);
+		$this->email = $this->stripOff($conn, $email);
+		$this->password = $this->stripOff($conn, $password);
 		$sql = "SELECT * FROM admin WHERE email LIKE '" . $this->email . "' AND password LIKE '" . $this->password . "'";
-		$result = $this->connect()->query($sql);
+		$result = $conn->query($sql);
 		if ($result->num_rows == 1) {
 			$this->response['status'] = true;
 			$this->response['message'] = 'Login successful!';

@@ -13,14 +13,16 @@ class SubscribedEmails extends Db
 	);
 	public function getSubscribedEmails()
 	{
+		$conn = $this->connect();
 		$sql = "SELECT * FROM emailsubscribe ORDER BY emailSubscribeDate DESC";
-		return $this->connect()->query($sql);
+		return $conn->query($sql);
 	} //end getSubscribedEmails()
 
 	public function deleteEmail($emailId)
 	{
+		$conn = $this->connect();
 		$sql = "DELETE FROM emailsubscribe WHERE emailSubscribeId = $emailId";
-		if ($this->connect()->query($sql) === TRUE) {
+		if ($conn->query($sql) === TRUE) {
 			// if (true) {
 			$this->response['status'] = true;
 			$this->response['message'] = 'Email deleted successfully';

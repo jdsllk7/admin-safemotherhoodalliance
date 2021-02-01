@@ -80,7 +80,7 @@ if (isset($_SESSION["login"])) {
   <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="dist/js/adminlte.min.js"></script>
-  <script src="dist/js/ajaxCall.js"></script>
+  <script src="dist/js/ajaxCallFormSubmit.js"></script>
   <script src="dist/js/adminLogin.js"></script>
 </body>
 

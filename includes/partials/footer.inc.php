@@ -67,9 +67,10 @@
         });
     });
 </script>
-<script src="dist/js/imagePreview.js"></script>
 <script src="dist/js/dialogBox.js"></script>
-<script src="dist/js/ajaxCall.js"></script>
+<script src="dist/js/ajaxCallFormSubmit.js"></script>
+<script src="dist/js/ajaxCallLoadHTML.js"></script>
+<script src="dist/js/blog.js"></script>
 <script src="dist/js/emailDelete.js"></script>
 </body>
 
