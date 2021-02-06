@@ -11,17 +11,17 @@ if (isset($_SESSION["login"])) {
 <html lang="en">
 
 <head>
+  <link rel="shortcut icon" href="favicon.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    Admin - Login | Safe Motherhood Alliance
+    Admin-Login | Safe Motherhood Alliance
     <?php
     $db = new DB();
     echo ' [' . $db->server() . ']';
     ?>
   </title>
   <!-- <link rel="shortcut icon" type="image/x-icon" href="dist/img/logo/pink-mom-baby-logo-circle-white-background.png" /> -->
-  <link rel="shortcut icon" href="#">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
