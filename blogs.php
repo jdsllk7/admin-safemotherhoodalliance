@@ -81,13 +81,13 @@ include_once 'includes/partials/header.inc.php';
 
   
 
-  <html>
+ <!--  <html>
 
   <body onload="myFunction()">
     <iframe id="jinu" src="" width="83" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
   </body>
 
-  </html>
+  </html> -->
 
 
 

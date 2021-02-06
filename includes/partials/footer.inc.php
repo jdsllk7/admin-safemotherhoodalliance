@@ -71,6 +71,7 @@
 <script src="dist/js/ajaxCallFormSubmit.js"></script>
 <script src="dist/js/ajaxCallLoadHTML.js"></script>
 <script src="dist/js/blog.js"></script>
+<script src="dist/js/blogShare.js"></script>
 <script src="dist/js/emailDelete.js"></script>
 </body>
 

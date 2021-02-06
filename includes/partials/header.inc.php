@@ -30,6 +30,7 @@ include_once 'includes/class-autoLoader.inc.php';
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
     <link rel="stylesheet" href="dist/css/style1.css">
     <link rel="stylesheet" href="dist/css/style2.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">

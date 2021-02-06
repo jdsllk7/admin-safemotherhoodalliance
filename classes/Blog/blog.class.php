@@ -62,7 +62,7 @@ class Blog extends Db
 					  </form>
 					</div>
 				  </div>
-				  <div class="card-body pb-1">
+				  <div class="card-body pb-3">
 					<div class="attachment-block clearfix border-0 p-2">
 					  <img class="attachment-img rounded" src="' . $this->getFilePath('blog', $row["blogId"], $conn)[0] . '" alt="Attachment Image">
 					  <div class="attachment-pushed">
@@ -72,12 +72,11 @@ class Blog extends Db
 						</div>
 					  </div>
 					</div>
-					<iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fsafemotherhoodalliance.org/blog-single.php?blogId=' . $row["blogId"] . '&layout=button_count&size=large&appId=2016607135310765&width=88&height=28" width="88" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-
-					<a class="btn btn-sm btn-primary font-small bold mb-4" style="background-color: #55acee" href="http://twitter.com/share?text=Some accompanying text&url=https://safemotherhoodalliance.org/blog-single.php?blogId=' . $row["blogId"] . '&hashtags=SafeMotherhoodAlliance,SafeDelivery" role="button"><i class="fab fa-twitter me-2"></i>Twitter</a>
+					<a target="_blank" class="btn btn-sm fa-btn-twitter text-white twitter-share-button" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Hello there&url=https://safemotherhoodalliance.org/blog-single.php?blogId=' . $row["blogId"] . '&hashtags=SafeMotherhoodAlliance,SafeDelivery" data-size="large"> <i class="fab fa-twitter me-2"></i> Tweet</a>
+					<a target="_blank" data-shareurl="https://safemotherhoodalliance.org/blog-single.php?blogId=' . $row["blogId"] . '" title="Share on Facebook" class="btn btn-sm fa-btn-facebook text-white fbsharelink"><i class="fas fa-share"></i> Facebook</a> 
+					<button type="button" title="Send to all Email Subscribers" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Email</button>
 					<!-- <button type="button" title="Share on Twitter" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Twitter</button> -->
 					<!-- <button type="button" title="Share on LinkedIn" class="btn btn-default btn-sm"><i class="fas fa-share"></i> LinkedIn</button> -->
-					<!-- <button type="button" title="Send to all Email Subscribers" class="btn btn-default btn-sm"><i class="fas fa-share"></i> All Subscribers</button> -->
 				  </div>
 				</div>
 				';
