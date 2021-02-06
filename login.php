@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION)) {
-	session_start();
+  session_start();
 }
 include_once 'includes/class-autoLoader.inc.php';
 if (isset($_SESSION["login"])) {
@@ -20,7 +20,8 @@ if (isset($_SESSION["login"])) {
     echo ' [' . $db->server() . ']';
     ?>
   </title>
-  <link rel="shortcut icon" type="image/x-icon" href="dist/img/logo/pink-mom-baby-logo-circle-white-background.png" />
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="dist/img/logo/pink-mom-baby-logo-circle-white-background.png" /> -->
+  <link rel="shortcut icon" href="#">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
