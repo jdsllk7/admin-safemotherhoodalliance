@@ -15,7 +15,7 @@ if (isset($_SESSION["login"])) {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>
-    Admin-Login | Safe Motherhood Alliance
+    Admin - Login | Safe Motherhood Alliance
     <?php
     $db = new DB();
     echo ' [' . $db->server() . ']';
