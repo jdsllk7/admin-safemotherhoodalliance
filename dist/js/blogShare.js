@@ -8,7 +8,6 @@ $(document).ready(function () {
   };
 
   $(document).on("click", ".fbsharelink", function () {
-    alert(123);
     var shareurl = $(this).data("shareurl");
     window.open(
       "https://www.facebook.com/sharer/sharer.php?u=" +

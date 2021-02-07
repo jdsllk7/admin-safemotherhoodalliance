@@ -73,6 +73,25 @@
 <script src="dist/js/blog.js"></script>
 <script src="dist/js/blogShare.js"></script>
 <script src="dist/js/emailDelete.js"></script>
+<script src="dist/js/emailBlog.js"></script>
 </body>
 
 </html>
+
+
+
+<?php
+//view email template
+/* $receiverName = '';
+$receiverEmail = "jdslk7@gmail.com";
+$senderEmail = "query@safemotherhoodalliance.org";
+$btn = '<a href="#https://safemotherhoodalliance.org/blog-single.php?blog=XXX" class="btn text-white baby-pink-darkest-bg">Read More</a>';
+$emailSubject = "Thank you for contacting safemotherhoodalliance";
+$heading = "New Blog";
+$img = '<img class="mb-2 rounded" src="https://static.toiimg.com/thumb/msid-70922473,imgsize-648144,width-800,height-600,resizemode-75/70922473.jpg" alt="Logo" width="100%" height="auto">';
+$subheading = "";
+$subSubheading = '<h5 class="mb-3" style="color: rgba(0,0,0,.7);">Missing in School Reopening Plans Black Families Trust We Dont Know What Happened Actually</h5>';
+$extra = "Please take time to read our online <a href='https://safemotherhoodalliance.org/blog.php'>blog</a>";
+$systemServices = new SystemServices\SystemServices();
+echo $systemServices->emailUI($receiverEmail, $receiverName, $heading, $subheading, $btn, $extra, $img, $subSubheading); */
+?>

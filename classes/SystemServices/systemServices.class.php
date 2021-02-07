@@ -12,9 +12,9 @@ class SystemServices
 	//$heading = the big bold words displayed on template 
 	//$subheading = the secondary bold words displayed on template 
 	//$extra = any other extra words displayed just below the button
-	public function sendEmail($receiverName, $receiverEmail, $senderEmail, $btn, $emailSubject, $heading, $subheading, $extra)
+	public function sendEmail($receiverName, $receiverEmail, $senderEmail, $btn, $emailSubject, $heading, $subheading, $extra, $img, $subSubheading)
 	{
-		$message = $this->emailUI($receiverEmail, $receiverName, $heading, $subheading, $btn, $extra);
+		$message = $this->emailUI($receiverEmail, $receiverName, $heading, $subheading, $btn, $extra, "", "");
 		$to = $receiverEmail;
 		$headers = "MIME-Version: 1.0" . "\r\n";
 		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
@@ -34,7 +34,7 @@ class SystemServices
 		}
 	} //end sendEmail()
 
-	public function emailUI($receiverEmail, $receiverName, $heading, $subheading, $btn, $extra)
+	public function emailUI($receiverEmail, $receiverName, $heading, $subheading, $btn, $extra, $img, $subSubheading)
 	{
 		return $this->emailUI =
 			'
@@ -424,24 +424,12 @@ class SystemServices
 				</div>
 				<div style="max-width: 600px; margin: 0 auto;" class="email-container">
 					<table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+						
 						<tr>
-							<td valign="top" class="bg_white" style="padding: 3em 2.5em 0 2.5em;">
-								<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-									<tr>
-										<td class="logo" style="text-align: center;">
-											<h1>
-												<a href="https://safemotherhoodalliance.org/">
-													<img style="opacity: .7" src="https://web-remote-resources.netlify.app/safemotherhoodalliance/pink-mom-baby-logo-with-large-label-right.png" height="80" width="200" alt="Logo">
-												</a>
-											</h1>
-										</td>
-									</tr>
-								</table>
-							</td>
-						</tr>
-						<tr>
-							<td valign="middle" class="hero bg_white" style="padding: 2em 0 2em 0;">
-								<img src="images/email.png" alt="" style="width: 300px; max-width: 600px; height: auto; margin: auto; display: block;">
+							<td valign="middle" class="hero bg_white" style="padding: 2em 0 0.5em 0;">
+								<a href="https://safemotherhoodalliance.org/">
+									<img src="https://web-remote-resources.netlify.app/safemotherhoodalliance/pink-mom-baby-logo-with-large-label-right.png" alt="" style="width: 200px; max-width: 500px; height: auto; margin: auto; display: block;">
+								</a>	
 							</td>
 						</tr>
 						<tr>
@@ -452,7 +440,9 @@ class SystemServices
 											<div class="text" style="padding: 0 2.5em; text-align: center;">
 												<h4 style="color: rgba(0,0,0,.5);" class="mb-4">' . $receiverName . '</h4>
 												<h2 class="baby-pink-darkest-color">' . $heading . '</h2>
+												' . $img . '
 												<h4 style="color: rgba(0,0,0,.7);">' . $subheading . '</h4>
+												' . $subSubheading . '
 												<p>
 													' . $btn . '
 												</p>

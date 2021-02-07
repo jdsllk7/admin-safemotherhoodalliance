@@ -33,6 +33,10 @@ class Blog extends Db
 			while ($row = $result->fetch_assoc()) {
 				$dt = new \DateTime($row["uploadDate"]);
 				$newDate = $dt->format('d-m-Y');
+				$shared = "";
+				if ($row["shared"] == 1) {
+					$shared = '<span class="badge badge-success" title="This blog has already been share to all your subscribers">Shared</span>';
+				}
 				$html .= '
 				<div class="card card-widget collapsed-card blogPost">
 				  <div class="card-header border-0">
@@ -42,6 +46,7 @@ class Blog extends Db
 					  <span class="description">Published on: ' . $newDate . ' | ' . $this->getTimeAgo($row["uploadDate"]) . '</span>
 					</div>
 					<div class="card-tools">
+					' . $shared . '
 					  <form class="inline previewBlogForm">
 						<input type="hidden" name="filePath" value="' . $this->getFilePath('blog', $row["blogId"], $conn)[0] . '">
 						<input type="hidden" name="blogTitle" value="' . $row["blogTitle"] . '">
@@ -72,10 +77,15 @@ class Blog extends Db
 						</div>
 					  </div>
 					</div>
-					<a target="_blank" class="btn btn-sm fa-btn-twitter text-white twitter-share-button" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Hello there&url=https://safemotherhoodalliance.org/blog-single.php?blogId=' . $row["blogId"] . '&hashtags=SafeMotherhoodAlliance,SafeDelivery" data-size="large"> <i class="fab fa-twitter me-2"></i> Tweet</a>
-					<a target="_blank" data-shareurl="https://safemotherhoodalliance.org/blog-single.php?blogId=' . $row["blogId"] . '" title="Share on Facebook" class="btn btn-sm fa-btn-facebook text-white fbsharelink"><i class="fas fa-share"></i> Facebook</a> 
-					<button type="button" title="Send to all Email Subscribers" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Email</button>
-					<!-- <button type="button" title="Share on Twitter" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Twitter</button> -->
+					<a target="_blank" class="btn btn-sm fa-btn-twitter text-white twitter-share-button" title="Share on Twitter" href="https://twitter.com/intent/tweet?text=Hello there&url=https://safemotherhoodalliance.org/blog-single.php?blog=' . $row["blogId"] . '&hashtags=SafeMotherhoodAlliance,SafeDelivery" data-size="large"> <i class="fab fa-twitter me-2"></i> Tweet</a>
+					<a target="_blank" data-shareurl="https://safemotherhoodalliance.org/blog-single.php?blog=' . $row["blogId"] . '" title="Share on Facebook" class="btn btn-sm fa-btn-facebook text-white fbsharelink"><i class="fas fa-share"></i> Facebook</a> 
+					<form class="inline emailBlogForm">
+						<input type="hidden" name="filePath" value="' . $this->getFilePath('blog', $row["blogId"], $conn)[0] . '">
+						<input type="hidden" name="blogTitle" value="' . $row["blogTitle"] . '">
+						<input type="hidden" name="blogText" value="' . $row["blogText"] . '">
+						<input type="hidden" name="blogId" value="' . $row["blogId"] . '">
+						<button type="submit" title="Send to all Email Subscribers" class="btn btn-default btn-sm"><i class="fas fa-share"></i> Email</button>
+					</form>
 					<!-- <button type="button" title="Share on LinkedIn" class="btn btn-default btn-sm"><i class="fas fa-share"></i> LinkedIn</button> -->
 				  </div>
 				</div>
